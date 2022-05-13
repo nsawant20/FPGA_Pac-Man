@@ -1,0 +1,20 @@
+module  pixel_mapper ( input        [9:0] DrawX, DrawY, PointX, PointY,
+                       output logic [7:0]  Red, Green, Blue );
+
+always_comb
+begin:RGB_Display
+	if(DrawX >= (PointX - 1) && DrawX <= (PointX + 1) && DrawY >= (PointY - 1) && DrawY <= (PointY + 1))
+        begin 
+            Red = 8'hFF; 
+            Green = 8'hB7;
+            Blue = 8'hAE;
+        end  
+	else 
+		  begin 
+            Red = 8'h00; 
+            Green = 8'h00;
+            Blue = 8'h00;
+		  end 
+end
+
+endmodule

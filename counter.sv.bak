@@ -1,0 +1,24 @@
+module  counter
+(
+		input [4:0] data_In,
+		input [18:0] write_address, read_address,
+		input Clk,
+
+		output logic open_close
+);
+
+logic [10:0] counter;
+logic [4:0] data_Out_Pallete;
+
+
+always_ff @ (posedge Clk) begin
+	if(counter == 1000)
+	begin
+		counter <= 0;
+		open_close = 1'b1;
+	end
+	else
+		counter <= counter + 1;
+end
+
+endmodule

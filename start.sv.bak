@@ -1,0 +1,9 @@
+module start (input logic Clk, Reset, keycode
+						output logic start, stop);
+						
+always_ff @ (posedge Reset or posedge Clk)
+begin
+
+end
+							 
+endmodule
